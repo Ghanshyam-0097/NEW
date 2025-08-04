@@ -81,3 +81,6 @@ CREATE TABLE Message (
  "ConnectionStrings": {
     "DefaultConnection": "Server=mydbinstance.abcdefghijk.us-east-1.rds.amazonaws.com;Database=AlumniDB;User Id=admin;Password=YourRDSPassword123;"
   }
+
+dotnet ef dbcontext scaffold "YourConnectionString" Microsoft.EntityFrameworkCore.SqlServer \
+--output-dir Models --context AppDbContext --data-annotations
