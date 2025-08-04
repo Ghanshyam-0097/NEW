@@ -1,1 +1,5 @@
 builder.Services.AddScoped<JwtService>();
+var app = builder.Build();
+
+app.UseAuthentication();
+app.UseAuthorization();
