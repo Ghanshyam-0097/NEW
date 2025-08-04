@@ -77,3 +77,7 @@ CREATE TABLE Message (
     SentAt DATETIME DEFAULT GETDATE(),
     IsRead BIT DEFAULT 0
 );
+
+ "ConnectionStrings": {
+    "DefaultConnection": "Server=mydbinstance.abcdefghijk.us-east-1.rds.amazonaws.com;Database=AlumniDB;User Id=admin;Password=YourRDSPassword123;"
+  }
