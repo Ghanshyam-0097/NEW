@@ -1,0 +1,6 @@
+"Jwt": {
+  "Key": "YourVerySecureSecretKey123!", 
+  "Issuer": "YourApp",
+  "Audience": "YourAppUsers",
+  "DurationInMinutes": 60
+}
