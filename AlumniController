@@ -1,0 +1,29 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace YourProject.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize(Roles = "Alumni")]
+    public class AlumniController : ControllerBase
+    {
+        [HttpGet("profile")]
+        public IActionResult GetProfile()
+        {
+            return Ok("This is the Alumni Profile Page.");
+        }
+
+        [HttpPost("complaint")]
+        public IActionResult FileComplaint([FromBody] string complaint)
+        {
+            return Ok("Complaint filed successfully: " + complaint);
+        }
+
+        [HttpGet("events")]
+        public IActionResult GetEvents()
+        {
+            return Ok("List of Events for Alumni.");
+        }
+    }
+}
