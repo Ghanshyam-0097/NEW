@@ -1,0 +1,30 @@
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace YourProject.Controllers
+{
+    [ApiController]
+    [Route("api/[controller]")]
+    [Authorize(Roles = "Admin")]
+    public class AdminController : ControllerBase
+    {
+        [HttpGet("dashboard")]
+        public IActionResult GetDashboard()
+        {
+            return Ok("Welcome to the Admin Dashboard.");
+        }
+
+        [HttpPost("verify-alumni/{alumniId}")]
+        public IActionResult VerifyAlumni(int alumniId)
+        {
+            // Implement verification logic here
+            return Ok($"Alumni with ID {alumniId} verified.");
+        }
+
+        [HttpGet("all-complaints")]
+        public IActionResult GetAllComplaints()
+        {
+            return Ok("All filed complaints by alumni.");
+        }
+    }
+}
